@@ -11,3 +11,7 @@ Completely dependant on the user preference. The end result is the same, it just
 
 **How does it work?**<br>
 Some theaters like LoriKTO take their dependencies from the original KTO. This means that kneeboard textures are also taken from the main theater. However WDP does not know this, and it outputs the kneeboard images to the incorrect directory. This bat script will just move the kneeboard images to the correct directory. Feel free to analyze/edit the code to your liking.
+
+This presents you with an option to choose which theater's files you wish to move over. 
+
+Happy flights!
