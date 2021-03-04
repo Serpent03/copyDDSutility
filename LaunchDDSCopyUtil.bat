@@ -5,8 +5,11 @@ echo [This script will put the kneeboard .dds files from theaters which don't ha
 
 echo.
 echo.
+echo -----------------------------------------------------------------
 
-set /p thrName=[1] For Baltic. [2] For LoriKTO. [3] For LoriKTO+. [4] For LorikBalkans. [5] For Panama. : 
+set /p thrName=[1] For Baltic. [2] For LoriKTO. [3] For LoriKTO+. [4] For LorikBalkans. [5] For Panama. [6] KTO TvT. : 
+
+echo -----------------------------------------------------------------
 
 REM BMS Kneeboard files location
 set baseLoc="Data\TerrData\Objects\KoreaObj\*.*"
@@ -21,7 +24,6 @@ set lorikBalkansLoc="Data\Add-On LorikBalkans\Terrdata\Objects\KoreaObj\*.*"
 set panamaLoc="Data\Add-On Panama\Terrdata\Objects\KoreaObj\*.*"
 set ktoTvTLoc="Data\Add-On Korea TvT\TerrData\Objects\KoreaObj\*.*"
 
-echo.
 echo.
 echo.
 
@@ -50,7 +52,11 @@ if %thrName%==5 ( 	REM Panama
 	copy %panamaLoc% %baseLoc%
 )
 
-echo.
+if %thrName%==6 ( 	REM TvT
+	echo Copying kneeboard files from %ktoTvTLoc% to %baseLoc%
+	copy %ktoTvTLoc% %baseLoc%
+)
+
 echo.
 echo All files copied successfully to %baseLoc%..
 
