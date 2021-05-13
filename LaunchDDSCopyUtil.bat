@@ -37,35 +37,41 @@ echo.
 if %thrName%==1 ( 	REM Baltic
 	echo Copying kneeboard files from %balticLoc% to %baseLoc%
 	copy %balticLoc% %baseLoc%
+	echo All files copied successfully to %baseLoc%..
 )
 
 if %thrName%==2 ( 	REM LoriKTO
 	echo Copying kneeboard files from %loriKTOLoc% to %baseLoc%
 	copy %loriKTOLoc% %baseLoc%
+	echo All files copied successfully to %baseLoc%..
 )
 
 if %thrName%==3 ( 	REM LoriKTO+
 	echo Copying kneeboard files from %loriKTOPlusLoc% to %baseLoc%
 	copy %loriKTOPlusLoc% %baseLoc%
+	echo All files copied successfully to %baseLoc%..
 )
 
 if %thrName%==4 ( 	REM Lorik Balkans
 	echo Copying kneeboard files from %lorikBalkansLoc% to %baseLoc%
 	copy %lorikBalkansLoc% %baseBalkansLoc%
+	echo All files copied successfully to %baseBalkansLoc%..
 )
 
 if %thrName%==5 ( 	REM ITO80
 	echo Copying kneeboard files from %itoEightyLoc% to %itoLoc%
 	copy %itoEightyLoc% %itoLoc%
+	echo All files copied successfully to %itoLoc%..
 )
 
 if %thrName%==6 ( 	REM TvT
 	echo Copying kneeboard files from %ktoTvTLoc% to %baseLoc%
 	copy %ktoTvTLoc% %baseLoc%
+	echo All files copied successfully to %baseLoc%..
 )
 
 echo.
-echo All files copied successfully to %baseLoc%..
+
 
 echo.
 set /p exitToDesk=Press enter to exit..  
