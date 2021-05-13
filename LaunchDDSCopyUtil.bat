@@ -1,13 +1,12 @@
 @echo off
 
-echo [This script will put the kneeboard .dds files from theaters which don't have their own KoreaObj dependency(and instead use Korea or other theater dependencies) into^
- the main Korea/Other theater\Terrdata\Objects folder. This will allow you to port over the kneeboard files that WDP puts out without any hassle. Make sure that "<Theater>\Terrdata\Objects\KoreaOjb\" folder actually exists.] 
+echo Script for moving around kneeboard files to the correct directory. Make sure the destination KoreaObj folder exists.
 
 echo.
 echo.
 echo -----------------------------------------------------------------
 
-set /p thrName=[1] For Baltic. [2] For LoriKTO. [3] For LoriKTO+. [4] For LorikBalkans. [5] For Panama. [6] KTO TvT. : 
+set /p thrName=[1] For Baltic. [2] For LoriKTO. [3] For LoriKTO+. [4] For LorikBalkans. [5] For Israel 1980s. [6] KTO TvT. : 
 
 echo -----------------------------------------------------------------
 
@@ -16,13 +15,21 @@ set baseLoc="Data\TerrData\Objects\KoreaObj\*.*"
 set baseBalkansLoc="Data\Add-On Balkans\Terrdata\Objects\KoreaObj\*.*"
 
 REM <Theater locations>
-
-set balticLoc="Data\Add-On Baltic\Terrdata\objects\KoreaObj\*.*"
-set loriKTOLoc="Data\Add-On LoriKTO\Terrdata\Objects\KoreaObj\*.*"
-set loriKTOPlusLoc="Data\Add-On LoriKTO\Terrdata\Objects+\KoreaObj\*.*"
-set lorikBalkansLoc="Data\Add-On LorikBalkans\Terrdata\Objects\KoreaObj\*.*"
+REM <Panama>
 set panamaLoc="Data\Add-On Panama\Terrdata\Objects\KoreaObj\*.*"
+
+REM <KTO>
+set loriKTOPlusLoc="Data\Add-On LoriKTO\Terrdata\Objects+\KoreaObj\*.*"
+set loriKTOLoc="Data\Add-On LoriKTO\Terrdata\Objects\KoreaObj\*.*"
 set ktoTvTLoc="Data\Add-On Korea TvT\TerrData\Objects\KoreaObj\*.*"
+
+REM <Balkans>
+set balticLoc="Data\Add-On Baltic\Terrdata\objects\KoreaObj\*.*"
+set lorikBalkansLoc="Data\Add-On LorikBalkans\Terrdata\Objects\KoreaObj\*.*"
+
+REM <Israel>
+set itoLoc="Data\Add-On Israel\Terrdata\objects\KoreaObj\*.*"
+set itoEightyLoc="Data\Add-On Israel1980s\Terrdata\objects\KoreaObj\*.*"
 
 echo.
 echo.
@@ -47,9 +54,9 @@ if %thrName%==4 ( 	REM Lorik Balkans
 	copy %lorikBalkansLoc% %baseBalkansLoc%
 )
 
-if %thrName%==5 ( 	REM Panama
-	echo Copying kneeboard files from %panamaLoc% to %baseLoc%
-	copy %panamaLoc% %baseLoc%
+if %thrName%==5 ( 	REM ITO80
+	echo Copying kneeboard files from %itoEightyLoc% to %itoLoc%
+	copy %itoEightyLoc% %itoLoc%
 )
 
 if %thrName%==6 ( 	REM TvT
